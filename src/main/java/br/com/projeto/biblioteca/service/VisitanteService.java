@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class VisitanteService {
@@ -15,4 +17,5 @@ public class VisitanteService {
     public VisitanteEntity salvarVisitante(VisitanteEntity visitanteEntity) {
         return visitanteRepository.save(visitanteEntity);
     }
+
 }
