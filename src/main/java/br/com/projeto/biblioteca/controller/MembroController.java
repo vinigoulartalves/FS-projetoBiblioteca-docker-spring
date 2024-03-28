@@ -25,5 +25,11 @@ public class MembroController {
         return membroService.listarMembros();
     }
 
+    @DeleteMapping
+    public String deletaMembro(@RequestParam("id") Long id) {
+        membroService.deletarMembro(id);
+        return "Ação deletar concluída com sucesso";
+    }
+
 
 }

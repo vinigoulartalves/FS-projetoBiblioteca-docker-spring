@@ -23,4 +23,10 @@ public class BibliotecarioController {
     public List<BibliotecarioEntity> listaBibliotecarios() {
         return bibliotecarioService.listarBibliotecarios();
     }
+
+    @DeleteMapping
+    public String deletaBibliotecario(@RequestParam("id") Long id) {
+        bibliotecarioService.deletarBibliotecario(id);
+        return "Ação deletar concluída com sucesso";
+    }
 }

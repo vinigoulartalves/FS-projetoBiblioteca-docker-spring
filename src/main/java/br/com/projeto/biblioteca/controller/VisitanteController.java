@@ -26,4 +26,12 @@ public class VisitanteController {
     public List<VisitanteEntity> listaVisitantes() {
         return visitanteService.listarVisitantes();
     }
+
+    @DeleteMapping
+    public String deletaVisitante(@RequestParam("id") Long id) {
+        visitanteService.deletarVisitante(id);
+        return "Ação deletar concluída com sucesso";
+    }
+
+
 }

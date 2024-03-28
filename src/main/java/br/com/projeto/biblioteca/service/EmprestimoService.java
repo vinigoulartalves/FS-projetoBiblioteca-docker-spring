@@ -48,5 +48,9 @@ public class EmprestimoService {
         return emprestimoRepository.findAll();
     }
 
+    public void deletarEmprestimo(Long id) {
+        emprestimoRepository.deleteById(id);
+    }
+
 
 }
