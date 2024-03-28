@@ -3,10 +3,9 @@ package br.com.projeto.biblioteca.controller;
 import br.com.projeto.biblioteca.entities.BibliotecarioEntity;
 import br.com.projeto.biblioteca.service.BibliotecarioService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -18,5 +17,10 @@ public class BibliotecarioController {
     @PostMapping
     public BibliotecarioEntity salvaBibliotecario(@RequestBody BibliotecarioEntity bibliotecarioEntity) {
         return bibliotecarioService.salvarBibliotecario(bibliotecarioEntity);
+    }
+
+    @GetMapping
+    public List<BibliotecarioEntity> listaBibliotecarios() {
+        return bibliotecarioService.listarBibliotecarios();
     }
 }

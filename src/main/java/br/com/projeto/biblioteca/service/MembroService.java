@@ -18,7 +18,7 @@ public class MembroService {
         return membroRepository.save(membroEntity);
     }
 
-    public List<MembroEntity> listarmebros(MembroEntity membroEntity) {
+    public List<MembroEntity> listarMembros() {
         return membroRepository.findAll();
     }
 

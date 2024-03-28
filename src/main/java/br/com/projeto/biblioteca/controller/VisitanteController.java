@@ -1,11 +1,14 @@
 package br.com.projeto.biblioteca.controller;
 
+import br.com.projeto.biblioteca.entities.MembroEntity;
 import br.com.projeto.biblioteca.entities.VisitanteEntity;
 import br.com.projeto.biblioteca.service.VisitanteService;
 import lombok.NoArgsConstructor;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -17,5 +20,10 @@ public class VisitanteController {
     @PostMapping
     public VisitanteEntity salvaVisitante(@RequestBody VisitanteEntity visitanteEntity) {
         return visitanteService.salvarVisitante(visitanteEntity);
+    }
+
+    @GetMapping
+    public List<VisitanteEntity> listaVisitantes() {
+        return visitanteService.listarVisitantes();
     }
 }

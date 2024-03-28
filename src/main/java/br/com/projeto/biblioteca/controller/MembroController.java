@@ -1,12 +1,12 @@
 package br.com.projeto.biblioteca.controller;
 
+import br.com.projeto.biblioteca.entities.LivroEntity;
 import br.com.projeto.biblioteca.entities.MembroEntity;
 import br.com.projeto.biblioteca.service.MembroService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -18,6 +18,11 @@ public class MembroController {
     @PostMapping
     public MembroEntity salvaMembro(@RequestBody MembroEntity membroEntity) {
         return membroService.salvarMembros(membroEntity);
+    }
+
+    @GetMapping
+    public List<MembroEntity> listaMembros() {
+        return membroService.listarMembros();
     }
 
 

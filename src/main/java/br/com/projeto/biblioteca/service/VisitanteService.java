@@ -18,4 +18,7 @@ public class VisitanteService {
         return visitanteRepository.save(visitanteEntity);
     }
 
+    public List<VisitanteEntity> listarVisitantes() {
+        return visitanteRepository.findAll();
+    }
 }
