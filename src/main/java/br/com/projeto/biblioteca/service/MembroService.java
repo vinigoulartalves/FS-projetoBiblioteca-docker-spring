@@ -22,4 +22,8 @@ public class MembroService {
         return membroRepository.findAll();
     }
 
+    public void deletarMembro(Long id) {
+        membroRepository.deleteById(id);
+    }
+
 }

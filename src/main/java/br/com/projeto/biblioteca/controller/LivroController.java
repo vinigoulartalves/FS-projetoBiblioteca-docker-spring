@@ -26,4 +26,10 @@ public class LivroController {
         return livroService.listarLivros();
     }
 
+    @DeleteMapping
+    public String deletaLivro(@RequestParam("id") Long id) {
+        livroService.deletarLivro(id);
+        return "Ação deletar concluída com sucesso";
+    }
+
 }

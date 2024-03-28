@@ -25,5 +25,11 @@ public class EmprestimoController {
         return emprestimoService.listarEmprestimos();
     }
 
+    @DeleteMapping
+    public String deletaEmprestimo(@RequestParam("id") Long id) {
+        emprestimoService.deletarEmprestimo(id);
+        return "Ação deletar concluída com sucesso";
+    }
+
 
 }
