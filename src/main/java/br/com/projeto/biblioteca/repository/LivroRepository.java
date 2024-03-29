@@ -1,6 +1,7 @@
 package br.com.projeto.biblioteca.repository;
 
 import br.com.projeto.biblioteca.entities.LivroEntity;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -15,10 +16,13 @@ public interface LivroRepository extends JpaRepository<LivroEntity, Long> {
             "SET " +
             "livro.titulo = :titulo, " +
             "livro.anoPublicacao = :ano_publicacao " +
-            "WHERE livro.id = :id")
-    void update(@Param("id") Long id,
-                @Param("titulo") String titulo,
-                @Param("ano_publicacao") Long anoPublicacao
+            "WHERE livro.id = :id"
+    )
+
+    @Transactional
+    void update(Long id,
+                String titulo,
+                Long ano_publicacao
     );
 
 

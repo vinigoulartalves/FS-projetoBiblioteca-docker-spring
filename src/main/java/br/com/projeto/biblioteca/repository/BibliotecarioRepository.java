@@ -1,6 +1,7 @@
 package br.com.projeto.biblioteca.repository;
 
 import br.com.projeto.biblioteca.entities.BibliotecarioEntity;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -17,9 +18,11 @@ public interface BibliotecarioRepository extends JpaRepository<BibliotecarioEnti
             "bibliotecario.email = :email, " +
             "bibliotecario.senha = :senha " +
             "WHERE bibliotecario.id = :id")
-    void update(@Param("id") Long id,
-                @Param("nome") String nome,
-                @Param("email") String email,
-                @Param("senha") String senha);
+
+    @Transactional
+    void update(Long id,
+                String nome,
+                String email,
+                String senha);
 
 }

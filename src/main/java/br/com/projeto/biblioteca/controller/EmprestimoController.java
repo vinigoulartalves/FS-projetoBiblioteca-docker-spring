@@ -2,8 +2,10 @@ package br.com.projeto.biblioteca.controller;
 
 import br.com.projeto.biblioteca.entities.BibliotecarioEntity;
 import br.com.projeto.biblioteca.entities.EmprestimoEntity;
+import br.com.projeto.biblioteca.entities.VisitanteEntity;
 import br.com.projeto.biblioteca.service.EmprestimoService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,6 +31,11 @@ public class EmprestimoController {
     public String deletaEmprestimo(@RequestParam("id") Long id) {
         emprestimoService.deletarEmprestimo(id);
         return "Ação deletar concluída com sucesso";
+    }
+
+    @PutMapping
+    public ResponseEntity<?> atualizaEmprestimo(@RequestBody EmprestimoEntity emprestimoEntity) {
+        return emprestimoService.atualizarEmprestimo(emprestimoEntity);
     }
 
 

@@ -2,7 +2,6 @@ package br.com.projeto.biblioteca.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "bibliotecario")
@@ -10,9 +9,8 @@ import lombok.NoArgsConstructor;
 
 public class BibliotecarioEntity {
 
-
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String nome;

@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 public class LivroEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String titulo;

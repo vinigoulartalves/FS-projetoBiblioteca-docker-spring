@@ -1,6 +1,7 @@
 package br.com.projeto.biblioteca.repository;
 
 import br.com.projeto.biblioteca.entities.MembroEntity;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -16,11 +17,14 @@ public interface MembroRepository extends JpaRepository<MembroEntity, Long> {
             "membro.nome = :nome, " +
             "membro.endereco = :endereco, " +
             "membro.telefone = :telefone " +
-            "WHERE membro.id = :id")
-    void update(@Param("id") Long id,
-                @Param("nome") String nome,
-                @Param("endereco") String endereco,
-                @Param("telefone") String telefone
+            "WHERE membro.id = :id"
+    )
+
+    @Transactional
+    void update(Long id,
+                String nome,
+                String endereco,
+                String telefone
     );
 }
 
