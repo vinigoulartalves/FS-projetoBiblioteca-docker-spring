@@ -1,10 +1,9 @@
 package br.com.projeto.biblioteca.controller;
 
-
-import br.com.projeto.biblioteca.entities.EmprestimoEntity;
 import br.com.projeto.biblioteca.entities.LivroEntity;
 import br.com.projeto.biblioteca.service.LivroService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,6 +29,11 @@ public class LivroController {
     public String deletaLivro(@RequestParam("id") Long id) {
         livroService.deletarLivro(id);
         return "Ação deletar concluída com sucesso";
+    }
+
+    @PutMapping
+    public ResponseEntity<?> atualizaLivro(@RequestBody LivroEntity livroEntity) {
+        return livroService.atualizarLivro(livroEntity);
     }
 
 }

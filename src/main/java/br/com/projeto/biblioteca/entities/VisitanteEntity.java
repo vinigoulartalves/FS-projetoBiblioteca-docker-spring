@@ -2,7 +2,7 @@ package br.com.projeto.biblioteca.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 @Entity
 @Table(name = "visitante")
@@ -11,7 +11,7 @@ public class VisitanteEntity {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;

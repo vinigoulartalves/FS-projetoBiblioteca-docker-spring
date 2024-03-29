@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class MembroEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String nome;
